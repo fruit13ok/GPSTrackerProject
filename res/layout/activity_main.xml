@@ -1,0 +1,148 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <EditText
+        android:id="@+id/etServerVariable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etServerURL"
+        android:layout_below="@+id/etServerURL"
+        android:ems="10"
+        android:text="route"
+        android:inputType="text"
+        android:imeOptions="actionDone" />
+
+    <TextView
+        android:id="@+id/tvLabelURL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/etServerVariable"
+        android:layout_alignParentLeft="true"
+        android:text="Server URL:"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/tvLabelVariable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/etServerVariable"
+        android:layout_alignParentLeft="true"
+        android:text="Server Variable:"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:id="@+id/etServerURL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/btnEnd"
+        android:ems="10"
+        android:text="http://hills.ccsf.edu/~user/cgi-bin/receive.py"
+        android:inputType="textUri|textCapSentences|textMultiLine"
+        android:imeOptions="actionDone" />
+
+    <TextView
+        android:id="@+id/tvPersLoca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tvDistanceTimeSpeed"
+        android:hint="persisted locations"
+        android:scrollbars="vertical" />
+
+    <Button
+        android:id="@+id/btnStart"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnShowLoca"
+        android:layout_alignBottom="@+id/btnShowLoca"
+        android:layout_alignParentLeft="true"
+        android:text="Start" />
+
+    <Button
+        android:id="@+id/btnEnd"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnShowLoca"
+        android:layout_alignBottom="@+id/btnShowLoca"
+        android:layout_alignParentRight="true"
+        android:text="End" />
+
+    <Button
+        android:id="@+id/btnSend"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/etServerURL"
+        android:layout_marginRight="24dp"
+        android:layout_toLeftOf="@+id/btnEnd"
+        android:text="Send" />
+
+    <TextView
+        android:id="@+id/tvDistanceTimeSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/etServerVariable"
+        android:hint="distance time speed" />
+
+    <TextView
+        android:id="@+id/tvSeekBarTitleLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="route upload every:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/tvSeekBarTicksLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvSeekBarTitleLabel"
+        android:layout_centerHorizontal="true"
+        android:text="once | minutely | hourly | daily | monthly | waypoint"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <SeekBar
+        android:id="@+id/sbUploadControl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tvSeekBarTicksLabel"
+        android:max="5" />
+
+    <TextView
+        android:id="@+id/tvNumOfPcMk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/sbUploadControl"
+        android:text="waypoints in memory"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <Button
+        android:id="@+id/btnShowLoca"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvNumOfPcMk"
+        android:layout_marginTop="32dp"
+        android:layout_toRightOf="@+id/tvLabelURL"
+        android:text="Show/Save" />
+
+    <TextView
+        android:id="@+id/tvLastUpload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnShowLoca"
+        android:layout_alignParentRight="true"
+        android:text="last upload"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+</RelativeLayout>
